@@ -3,29 +3,29 @@
 # Пользователь вводит 2 числа. n — кол-во элементов первого множества. m — кол-во элементов второго множества. 
 # Затем пользователь вводит сами элементы множеств.
 
-def quick_sort(array):
-    if len(array) < 1:
-        return array
-    else:
-        pivot = array[0]
+# def quick_sort(array):
+#     if len(array) < 1:
+#         return array
+#     else:
+#         pivot = array[0]
         
-    less = [i for i in array[1:] if i <= pivot]
-    greater = [i for i in array[1:] if i > pivot]
-    return quick_sort(less) + [pivot] + quick_sort(greater)
+#     less = [i for i in array[1:] if i <= pivot]
+#     greater = [i for i in array[1:] if i > pivot]
+#     return quick_sort(less) + [pivot] + quick_sort(greater)
 
-q1 = int(input('Введите количество элементов первого множества: '))
-q2 = int(input('Введите количество элементов второго множества: '))
-list1 = [0]*q1
-list2 = [0]*q2
-for i in range(q1):
-    list1[i] = int(input('Введите значение элемента для первого множества:'))
-for j in range(q2):
-    list2[j] = int(input('Введите значение элемента для второго множества:'))
+# q1 = int(input('Введите количество элементов первого множества: '))
+# q2 = int(input('Введите количество элементов второго множества: '))
+# list1 = [0]*q1
+# list2 = [0]*q2
+# for i in range(q1):
+#     list1[i] = int(input('Введите значение элемента для первого множества:'))
+# for j in range(q2):
+#     list2[j] = int(input('Введите значение элемента для второго множества:'))
 
-common_list = list1 + list2
-quick_sort(common_list)
-final_common_list=set(common_list)
-print(final_common_list)
+# common_list = list1 + list2
+# quick_sort(common_list)
+# final_common_list=set(common_list)
+# print(final_common_list)
     
 
 # Задача 24: В фермерском хозяйстве в Карелии выращивают чернику. 
@@ -58,3 +58,15 @@ print(final_common_list)
 #             maxBerries = berriesToCompare
             
 # print(maxBerries)
+
+
+# Другое решение
+sp = [int(x) for x in input("Введие значения ягод на кустах через пробелы одним списком: ").split()]
+mx = 0
+summa_with_moving_one = sp[-1] + sp[0] + sp[1]
+summa_with_moving_two = sp[-2] + sp[-1] + sp[0]
+for i in range(2, len(sp)):
+    summa = sp[i] + sp[i -1] + sp[i -2]
+    mx = max(mx, summa)
+mx = max(mx, summa_with_moving_one, summa_with_moving_two)
+print(mx)
