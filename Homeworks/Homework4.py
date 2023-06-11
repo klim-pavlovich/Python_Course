@@ -61,12 +61,18 @@
 
 
 # Другое решение
-sp = [int(x) for x in input("Введие значения ягод на кустах через пробелы одним списком: ").split()]
-mx = 0
-summa_with_moving_one = sp[-1] + sp[0] + sp[1]
-summa_with_moving_two = sp[-2] + sp[-1] + sp[0]
-for i in range(2, len(sp)):
-    summa = sp[i] + sp[i -1] + sp[i -2]
-    mx = max(mx, summa)
-mx = max(mx, summa_with_moving_one, summa_with_moving_two)
-print(mx)
+# sp = [int(x) for x in input("Введие значения ягод на кустах через пробелы одним списком: ").split()]
+# mx = 0
+# summa_with_moving_one = sp[-1] + sp[0] + sp[1]
+# summa_with_moving_two = sp[-2] + sp[-1] + sp[0]
+# for i in range(2, len(sp)):
+#     summa = sp[i] + sp[i -1] + sp[i -2]
+#     mx = max(mx, summa)
+# mx = max(mx, summa_with_moving_one, summa_with_moving_two)
+# print(mx)
+
+# Решение в одну строку
+
+lst = [7, 2, 3, 4, 5]
+n = len(lst)
+result = max([lst[i - 1] + lst[i] + lst [(i + 1) % n] for i in range(n)])
