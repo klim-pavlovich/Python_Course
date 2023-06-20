@@ -8,18 +8,15 @@
 
 # 2 ** 4
 # 2 ** 2 ** 2
-def exponentiation(num, exp):
-    if exp == 0:
-        return 1
-    elif exp == 1:
-        return num
-    else:
-        return exponentiation((num),(exp-1)) * num
+# def exponentiation(num, exp):
+#     if exp == 0:
+#         return 1
+#     return exponentiation((num),(exp-1)) * num
     
-num_of_user = int(input('Введите целое число, которое хотите возвести в степень: '))
-exp_of_user = int(input('Введите степень целым числом, в которую хотите возвести число: '))
-res_of_user = exponentiation(num_of_user,exp_of_user)
-print(res_of_user)
+# num_of_user = int(input('Введите целое число, которое хотите возвести в степень: '))
+# exp_of_user = int(input('Введите степень целым числом, в которую хотите возвести число: '))
+# res_of_user = exponentiation(num_of_user,exp_of_user)
+# print(res_of_user)
 
 
 
@@ -31,11 +28,10 @@ print(res_of_user)
 # 4
 
 
-# def sum(a,b):
-#     if b == 0:
-#         return a
-#     else:
-#         return sum(a+1,b-1)
+def sum(a,b):
+    if b == 0:
+        return a
+    return sum(a+1,b-1)
         
 # a = int(input('Введите первое целое неотрицательное число для нахождения суммы: '))
 # b = int(input('Введите второе целое неотрицательное число для нахождения суммы: '))
