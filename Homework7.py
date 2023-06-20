@@ -44,6 +44,21 @@
 # print(checking_the_rythm(poem_from_user))
 
 
+# # Другое решение
+# def count_vowels(text: str) -> int:
+#     vowels ='аеёиоуыэюя'
+#     count = 0
+#     for char in text.lower():
+#         if char in vowels:
+#             count+=1
+#     return count
+
+# result = list(map(lambda sym: count_vowels(sym), input("Введите фразу: ").split()))
+# if len(set(result)) == 1:
+#     print("Парам пам-пам")
+# else:
+#     print("Пам парам")
+
 # Задача 36: Напишите функцию print_operation_table (operation, num_rows=6, num_columns=6),
 # которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца.
 # Аргументы num_rows и num_columns указывают число строк и столбцов таблицы, которые должны быть распечатаны.
@@ -63,11 +78,11 @@
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
 
-def print_operation_table (operation, num_rows=6, num_columns=6):
-    for i in range(1, num_columns+1):
-        for j in range(1, num_rows+1):
-            element = operation(i,j)
-            print(element, end =" ")
-        print()
+# def print_operation_table (operation, num_rows=6, num_columns=6):
+#     for i in range(1, num_rows+1):
+#         for j in range(1, num_columns+1):
+#             element = operation(i,j)
+#             print(element, end ="\t")
+#         print()
     
-print_operation_table(lambda x, y: x * y)
+# print_operation_table(lambda x, y: x * y)
